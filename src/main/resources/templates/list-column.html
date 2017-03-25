@@ -13,13 +13,15 @@
     <div th:if="${items} and ${items.size()}">
 
         <table>
+            <!--<link rel="stylesheet" href="techjobs.css">-->
+            <div th:replace="search :: job-display"></div>
+
             <tr th:each="item, idx : ${items}" th:class="${idx.odd} ? 'odd'">
                 <td><a th:href="@{/list/jobs(column=${column},value=${item})}" th:text="${item}"></a></td>
             </tr>
         </table>
-
     </div>
-
+    <!--&lt;!&ndash;<div th:replace="search :: job-display"></div> to display headings&ndash;&gt;-->
 </div>
 
 </body>

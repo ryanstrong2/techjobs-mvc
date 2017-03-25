@@ -3,7 +3,7 @@
 <head th:replace="fragments :: head">
 </head>
 <body>
-
+<!--<link rel="stylesheet" href="techjobs.css">-->
 <div th:replace="fragments :: page-header"></div>
 
 <div class="container body-content">
@@ -17,15 +17,14 @@
             <span th:each="column : ${columns}">
                 <input
                         type="radio"
-                        name="searchType"
+
+                        name="searchKey"
                         th:id="${column.key}"
                         th:value="${column.key}"
                         th:checked="${column.key == 'all'}"/>
                 <label th:for="${column.key}" th:text="${column.value}"></label>
             </span>
-
         </p>
-
         <p>
             <label for="searchTerm">Keyword:</label>
             <input type="text" name="searchTerm" id="searchTerm" />
@@ -35,10 +34,40 @@
     </form>
 
     <hr />
+  <!--TODO #2 - Loop over jobs map to display all job fields &ndash;&gt;&ndash;&gt;-->
+<div th:fragment="job-display">
+        <table class="job-listing" th:each="result: ${results}">
+            <tr th:each="row :${result}">
+               <div th:fragment="category">
+                <td th:text="${row.key}"></td>
+               </div>
+                <td th:text="${row.value}"></td>
 
-    <!-- TODO #2 - Loop over jobs map to display all job fields -->
+            </tr>
 
+        </table>
 </div>
 
+    <!--<script>-->
+        <!--function search(){-->
+        <!--&lt;!&ndash;var x="", i;&ndash;&gt;-->
+        <!--for (HashMap<String, String> row : results) {-->
+            <!--String aValue = row.get(id);-->
+            <!--if (aValue != null && aValue.toLowerCase().contains(text.toLowerCase())) {-->
+                <!--results.add(row);-->
+            <!--}}-->
+    <!--</script>-->
+    <!--div class="container body-content">-->
+    <!--<h1 th:text="${#strings.capitalizeWords(title)}"></h1>-->
+    <!--<h2>View All</h2>-->
+    <!--<ul>-->
+    <!--<li th:each="column : ${columns}">-->
+    <!--<a th:href="@{/list/values(column=${column.key})}" th:text="${column.value}"></a>-->
+    <!--</li>-->
+    <!--</ul>-->
+
+
+
+</div>
 </body>
 </html>

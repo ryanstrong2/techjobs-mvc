@@ -99,7 +99,6 @@ public class JobData {
 
         // load data, if not already loaded
         loadData();
-
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
 
         for (HashMap<String, String> row : allJobs) {
@@ -109,13 +108,11 @@ public class JobData {
 
                 if (aValue.toLowerCase().contains(value.toLowerCase())) {
                     jobs.add(row);
-
                     // Finding one field in a job that matches is sufficient
                     break;
                 }
             }
         }
-
         return jobs;
     }
 
@@ -123,14 +120,12 @@ public class JobData {
      * Read in data from a CSV file and store it in a list
      */
     private static void loadData() {
-
         // Only load data once
         if (isDataLoaded) {
             return;
         }
 
         try {
-
             // Open the CSV file and set up pull out column header info and records
             Resource resource = new ClassPathResource(DATA_FILE);
             InputStream is = resource.getInputStream();
