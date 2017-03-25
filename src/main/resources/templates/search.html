@@ -17,7 +17,6 @@
             <span th:each="column : ${columns}">
                 <input
                         type="radio"
-
                         name="searchKey"
                         th:id="${column.key}"
                         th:value="${column.key}"
@@ -38,9 +37,9 @@
 <div th:fragment="job-display">
         <table class="job-listing" th:each="result: ${results}">
             <tr th:each="row :${result}">
-               <div th:fragment="category">
+
                 <td th:text="${row.key}"></td>
-               </div>
+
                 <td th:text="${row.value}"></td>
 
             </tr>

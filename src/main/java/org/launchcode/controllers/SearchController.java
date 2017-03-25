@@ -36,33 +36,7 @@ public class SearchController {
         }
         model.addAttribute("columns", ListController.columnChoices);
         model.addAttribute("results", results);
-//                = JobData.
-//                findByColumnAndValue("${column.key}", "${column.value}");
 
-//        search the list create instance of job data access find methods
-//        for (HashMap<String, String> row : results) {
-//            String aValue = row.get(id);
-//            if (aValue != null && aValue.toLowerCase().contains(text.toLowerCase())) {
-//                results.add(row);
-//            }
-//         model.addAttribute("search type", "All Jobs");
-//         model.addAttribute("${column.value}", results );
     return "search";
     }
 }
-//    public String listColumnValues(Model model, @RequestParam String column) {
-
-//        if (column.equals("all")) {
-//            ArrayList<HashMap<String, String>> jobs = JobData.findAll();
-//            model.addAttribute("title", "All Jobs");
-//            model.addAttribute("jobs", jobs);
-//            return "list-jobs";
-//        } else {
-//            ArrayList<String> items = JobData.findAll(column);
-//            model.addAttribute("title", "All " + columnChoices.get(column) + " Values");
-//            model.addAttribute("column", column);
-//            model.addAttribute("items", items);
-//            return "list-column";
-//        }
-//
-//    }
