@@ -36,6 +36,7 @@ public class SearchController {
         }
         model.addAttribute("columns", ListController.columnChoices);
         model.addAttribute("results", results);
+        model.addAttribute("searchQuery", searchTerm);
 
     return "search";
     }

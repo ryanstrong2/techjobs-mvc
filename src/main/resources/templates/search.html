@@ -34,7 +34,10 @@
 
     <hr />
   <!--TODO #2 - Loop over jobs map to display all job fields &ndash;&gt;&ndash;&gt;-->
-<div th:fragment="job-display">
+    <div th:if ="${results}">
+    <span th:if="${results.size() &gt; 2}" th:text="${results.size()} + ' jobs match ' + ${searchQuery}"></span>
+    <span th:if="${results.size() &lt; 2}" th:text="${results.size()} + ' job(s) match that search.'"></span>
+    <div th:fragment="job-display">
         <table class="job-listing" th:each="result: ${results}">
             <tr th:each="row :${result}">
 
@@ -46,7 +49,7 @@
 
         </table>
 </div>
-
+    </div>
     <!--<script>-->
         <!--function search(){-->
         <!--&lt;!&ndash;var x="", i;&ndash;&gt;-->
