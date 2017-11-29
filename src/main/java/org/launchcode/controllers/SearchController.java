@@ -22,7 +22,6 @@ public class SearchController {
         model.addAttribute("columns", ListController.columnChoices);
         return "search";
     }
-
     // TODO #1 - Create handler to process search request and display results
     @RequestMapping(value = "results", method = RequestMethod.GET)
 //method Post
@@ -37,7 +36,6 @@ public class SearchController {
         model.addAttribute("columns", ListController.columnChoices);
         model.addAttribute("results", results);
         model.addAttribute("searchQuery", searchTerm);
-
     return "search";
     }
 }
